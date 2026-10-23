@@ -3,190 +3,210 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Birthday Made For You ♡</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Only For You ♡</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#090b1a;color:#fff;font-family:Georgia,serif;text-align:center}
-section{min-height:100vh;padding:55px 18px;display:none;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at top,#30234e,#090b1a 72%);animation:appear 1s ease}
-section.active{display:flex}
-@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
-h1{font-size:clamp(29px,7vw,46px);color:#ffd6ed;margin:15px 0}
-p{line-height:1.8;max-width:520px;color:#e8dff8}
-.small{font-size:13px;color:#bcb1d5}
-button,input{font:inherit;border-radius:25px;padding:13px 19px;margin:8px;border:1px solid #d9a9ff}
-button{background:#e9b9e8;color:#23122f;cursor:pointer}
-button:hover{background:#fff}
-input{background:#171329;color:white;width:min(290px,90%)}
-.art{font-size:75px;margin:15px;animation:float 3s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-13px)}}
-.card{width:min(420px,95%);padding:25px 18px;background:#ffffff0c;border:1px solid #c7a0e655;border-radius:22px;margin:12px auto;box-shadow:0 0 30px #a45cff13}
-.row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:500px}
-.balloon{font-size:50px;border:0;background:transparent;animation:float 2s infinite}
-.balloon span{display:block;font-size:12px;color:#f9d6f0}
-.letter{width:min(155px,43%);min-height:145px;background:#f5d8f0;color:#3d2249;border-radius:14px;padding:18px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;line-height:1.6}
-.letter b{font-size:18px}
+body{margin:0;background:#090817;color:white;font-family:Georgia,serif;text-align:center}
+section{display:none;min-height:100vh;padding:45px 16px;align-items:center;justify-content:center;flex-direction:column;overflow:hidden;background:radial-gradient(ellipse at top,#392257,#111027 55%,#080714);position:relative}
+section.active{display:flex;animation:enter 1s ease}
+@keyframes enter{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+h1{font-size:clamp(29px,7vw,44px);color:#ffd5f4;text-shadow:0 0 22px #d36eff66}
+p{line-height:1.8;max-width:480px;color:#e8dcf7}
+button,input{font:inherit;padding:13px 19px;margin:8px;border-radius:24px;border:1px solid #dcaaff}
+button{background:#f4c8f0;color:#291336;cursor:pointer}
+input{background:#18132a;color:white;width:min(280px,90%)}
+.art{font-size:65px;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+.card{width:min(440px,96%);padding:22px 16px;margin:14px auto;border:1px solid #d9b1ff55;border-radius:22px;background:#ffffff0b}
+.small{font-size:12px;letter-spacing:3px;color:#c9b2e9}
+.row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.balloon{font-size:48px;background:none;border:0}
+.balloon span{display:block;font-size:12px;color:white}
+.letter{width:43%;min-height:125px;background:#f5d9f1;color:#402047;border-radius:13px;display:flex;flex-direction:column;justify-content:center;align-items:center}
 .hidden{display:none}
-#message{color:#ffe2f5;margin:12px}
-#musicStatus{font-size:12px;color:#d7c2ef}
-footer{color:#a99dbd;font-size:12px;margin-top:24px}
+#message{color:#ffd6f4}
+#sparkles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.spark{position:absolute;top:42%;left:50%;font-size:22px;animation:burst 1.7s ease-out forwards}
+@keyframes burst{0%{transform:translate(0,0) scale(.2);opacity:1}100%{transform:translate(var(--x),var(--y)) rotate(240deg) scale(1.5);opacity:0}}
+.cake-wrap{position:relative;width:min(320px,88vw);height:240px;margin:25px auto 5px}
+.cake-base{position:absolute;bottom:20px;left:4%;width:92%;height:105px;background:linear-gradient(90deg,#a746a9,#f4a8dc,#ad55ba);border-radius:12px 12px 24px 24px;box-shadow:0 14px 0 #73337f,0 23px 30px #0007}
+.cake-top{position:absolute;bottom:113px;left:4%;width:92%;height:44px;border-radius:50%;background:#ffe0f5;border-bottom:10px solid #e89ad9}
+.icing{position:absolute;bottom:105px;left:9%;width:82%;height:22px;background:#ffdbf3;border-radius:0 0 16px 16px}
+.candle-row{position:absolute;bottom:151px;left:0;width:100%;display:flex;justify-content:center;gap:19px;z-index:2}
+.candle{width:12px;height:48px;background:repeating-linear-gradient(45deg,#fff 0 6px,#ff79c9 6px 12px);border-radius:4px;position:relative}
+.flame{position:absolute;top:-24px;left:1px;width:10px;height:19px;background:#ffe58a;border-radius:60% 40% 60% 40%;box-shadow:0 0 17px #ffcf60;animation:flicker .5s infinite alternate}
+@keyframes flicker{to{transform:scale(.8) rotate(9deg)}}
+.cake-decor{position:absolute;bottom:35px;left:0;width:100%;font-size:23px;z-index:3}
+.anime{width:min(360px,95%);padding:15px;border:1px solid #d8a9ff55;border-radius:18px;background:linear-gradient(135deg,#302044,#11182e);margin:10px auto}
+.anime-face{font-size:54px}
+.anime-name{color:#f7c9f5;font-size:13px}
 </style>
 </head>
 <body>
 
 <section id="intro" class="active">
-  <div class="art">🌌 ✨</div>
-  <p class="small">A LITTLE WORLD, MADE JUST FOR YOU</p>
-  <h1>This website was made only for you.</h1>
-  <p>Some surprises are better when they are discovered slowly...</p>
-  <button onclick="go('secret')">Enter Your Secret World ♡</button>
+<div class="art">🌌 ✨</div>
+<p class="small">A SECRET LITTLE WORLD</p>
+<h1>This website was made only for you.</h1>
+<p>A little surprise, created especially for your special day.</p>
+<button onclick="go('secret')">Enter Your Secret World ♡</button>
 </section>
 
 <section id="secret">
-  <div class="art">🔐 🌙</div>
-  <h1>Our Secret Code</h1>
-  <p>Enter the secret code we created together.</p>
-  <input id="code" type="password" placeholder="Enter your secret code">
-  <button onclick="unlock()">Unlock ♡</button>
-  <p id="message"></p>
+<div class="art">🔐 🌙</div>
+<h1>Our Secret Code</h1>
+<p>Enter the secret code we created together.</p>
+<input id="code" type="password" placeholder="Our secret code">
+<button onclick="unlock()">Unlock ♡</button>
+<p id="message"></p>
 </section>
 
 <section id="cake">
-  <div class="art">🎂</div>
-  <p class="small">TODAY IS ALL ABOUT YOU</p>
-  <h1>Happy Birthday!</h1>
-  <div class="card">
-    <div style="font-size:65px" id="candles">🎂🕯️🕯️🕯️</div>
-    <p>Make a wish and blow out the candles!</p>
-    <button onclick="blow()">Blow Out The Candles ✨</button>
-  </div>
-  <h2 id="personName">Your Special Name</h2>
-  <p id="birthdayDate">Your Special Date</p>
-  <p>Today is the most special day for this person. ♡</p>
-  <button onclick="go('balloons')">Continue Your Surprise →</button>
+<div id="sparkles"></div>
+<p class="small">TODAY IS ALL ABOUT YOU</p>
+<h1>Happy Birthday!</h1>
+<div class="cake-wrap">
+<div class="candle-row" id="candles">
+<div class="candle"><i class="flame"></i></div>
+<div class="candle"><i class="flame"></i></div>
+<div class="candle"><i class="flame"></i></div>
+<div class="candle"><i class="flame"></i></div>
+<div class="candle"><i class="flame"></i></div>
+</div>
+<div class="cake-top"></div>
+<div class="icing"></div>
+<div class="cake-base"></div>
+<div class="cake-decor">🍓　✨　🍓　✨　🍓</div>
+</div>
+<p>Make a wish and blow out the candles!</p>
+<button onclick="blow()">Blow Out The Candles ✨</button>
+<h2 id="personName" style="color:#ffd5f4">Your Special Name</h2>
+<p id="birthdayDate">Your Special Date</p>
+<p>Today is the most special day for this person. ♡</p>
+<div class="anime"><div class="anime-face">🖤 🌸 💜</div><div class="anime-name">ANIME MAGIC • SPECIAL DAY</div></div>
+<button onclick="go('balloons')">Continue →</button>
 </section>
 
 <section id="balloons">
-  <div class="art">🎈 ✨ 🎈</div>
-  <h1>A Little Reminder</h1>
-  <p>Tap each balloon and discover your message.</p>
-  <div class="row">
-    <button class="balloon" onclick="pop(this,'YOU')">🎈<span>Tap me</span></button>
-    <button class="balloon" onclick="pop(this,'ARE')">🎈<span>Tap me</span></button>
-    <button class="balloon" onclick="pop(this,'NICE')">🎈<span>Tap me</span></button>
-    <button class="balloon" onclick="pop(this,'PERSON')">🎈<span>Tap me</span></button>
-  </div>
-  <h2 id="balloonMessage"></h2>
-  <button onclick="go('letters')">Open Your Letters 💌</button>
+<div class="art">🎈 ✨ 🎈</div>
+<h1>A Little Reminder</h1>
+<p>Tap each balloon to discover your message.</p>
+<div class="row">
+<button class="balloon" onclick="pop(this,'YOU')">🎈<span>Tap me</span></button>
+<button class="balloon" onclick="pop(this,'ARE')">🎈<span>Tap me</span></button>
+<button class="balloon" onclick="pop(this,'NICE')">🎈<span>Tap me</span></button>
+<button class="balloon" onclick="pop(this,'PERSON')">🎈<span>Tap me</span></button>
+</div>
+<h2 id="balloonMessage"></h2>
+<div class="anime"><div class="anime-face">🌸 👩🏻‍🎤 🌙</div><div class="anime-name">A LITTLE ANIME SURPRISE</div></div>
+<button onclick="go('letters')">Open Your Letters 💌</button>
 </section>
 
 <section id="letters">
-  <div class="art">💌 🌸</div>
-  <h1>Four Little Letters</h1>
-  <p>Each envelope holds a little message for you.</p>
-  <div class="row">
-    <button class="letter" onclick="readLetter(0)">🌸<b>Letter One</b><span>Open me</span></button>
-    <button class="letter" onclick="readLetter(1)">🌙<b>Letter Two</b><span>Open me</span></button>
-    <button class="letter" onclick="readLetter(2)">⭐<b>Letter Three</b><span>Open me</span></button>
-    <button class="letter" onclick="readLetter(3)">💜<b>Letter Four</b><span>Open me</span></button>
-  </div>
-  <div class="card hidden" id="letterContent">
-    <div class="art" style="font-size:45px">🌷</div>
-    <h2 id="letterTitle"></h2>
-    <p id="letterText"></p>
-    <button onclick="closeLetter()">Close Letter</button>
-  </div>
-  <p class="small">A little anime magic, just for you.</p>
-  <button onclick="go('final')">One Last Letter →</button>
+<div class="art">💌 🌸</div>
+<h1>Four Little Letters</h1>
+<p>Tap each letter to open it.</p>
+<div class="row">
+<button class="letter" onclick="readLetter(0)">🌸<b>Letter One</b></button>
+<button class="letter" onclick="readLetter(1)">🌙<b>Letter Two</b></button>
+<button class="letter" onclick="readLetter(2)">⭐<b>Letter Three</b></button>
+<button class="letter" onclick="readLetter(3)">💜<b>Letter Four</b></button>
+</div>
+<div class="card hidden" id="letterContent">
+<div class="art" style="font-size:40px">💌</div>
+<h2 id="letterTitle"></h2><p id="letterText"></p>
+<button onclick="closeLetter()">Close</button>
+</div>
+<div class="anime"><div class="anime-face">🖤 🌸 💜</div><div class="anime-name">YOUR LITTLE ANIME WORLD</div></div>
+<button onclick="go('final')">The Final Letter →</button>
 </section>
 
 <section id="final">
-  <div class="art">🌌 💌 ✨</div>
-  <p class="small">SOMETHING I SAVED FOR LAST</p>
-  <h1>The Final Letter</h1>
-  <div class="card">
-    <div class="art">💌</div>
-    <p>A little more than a birthday wish. A little more than words.</p>
-    <button onclick="showFinal()">Open Your Final Letter ♡</button>
-    <div id="finalText" class="hidden">
-      <p>Happy Birthday to you. ♡</p>
-      <p>I hope this new chapter brings you beautiful memories, unexpected happiness, and countless reasons to smile.</p>
-      <p>May you always find something worth dreaming about and the courage to follow those dreams.</p>
-      <p>This little website is a small surprise, made especially for your special day.</p>
-      <p>Keep being yourself. Your story still has so many beautiful pages left to unfold. ✨</p>
-    </div>
-  </div>
-  <button onclick="go('bye')">Continue ♡</button>
+<div class="art">🌌 💌</div>
+<p class="small">SAVED FOR LAST</p>
+<h1>The Final Letter</h1>
+<div class="card">
+<div class="art">💌</div>
+<p>There's one more little surprise waiting for you.</p>
+<button onclick="showFinal()">Open Your Final Letter ♡</button>
+<div id="finalText" class="hidden">
+<p>Happy Birthday to you. ♡</p>
+<p>May this new chapter bring you beautiful memories, unexpected happiness and countless reasons to smile.</p>
+<p>Keep dreaming, keep growing, and keep being the wonderful person you are.</p>
+<p>This little world was made especially for your special day. ✨</p>
+</div>
+</div>
+<div class="anime"><div class="anime-face">🌙 💜 🌸</div><div class="anime-name">A LITTLE MAGIC, JUST FOR YOU</div></div>
+<button onclick="go('bye')">Continue ♡</button>
 </section>
 
 <section id="bye">
-  <div class="art">🌠 🖤 🌠</div>
-  <h1>Okay, byee! ♡</h1>
-  <p>Until the next little adventure...</p>
-  <p>Don't forget to smile today.</p>
-  <div class="art">✨ 🌸 ✨</div>
-  <button onclick="go('intro')">Watch Again ↺</button>
+<div class="art">🌠 🖤 🌠</div>
+<h1>Okay, byee! ♡</h1>
+<p>Until our next little adventure...</p>
+<div class="art">✨ 🌸 ✨</div>
+<button onclick="go('intro')">Watch Again ↺</button>
 </section>
 
-<section id="music">
-  <h1>Music</h1>
-  <input type="file" id="musicFile" accept="audio/*">
-  <audio id="audio" controls loop></audio>
-</section>
-
-<div style="position:fixed;bottom:12px;right:12px;z-index:10">
-  <button onclick="document.getElementById('musicFile').click()">♫ Add Music</button>
+<div style="position:fixed;right:10px;bottom:10px;z-index:10">
+<button onclick="document.getElementById('musicFile').click()">♫ Add Music</button>
+<input type="file" id="musicFile" accept="audio/*" style="display:none">
+<audio id="audio" controls loop style="display:none"></audio>
 </div>
-<p id="musicStatus" style="position:fixed;bottom:0;left:8px;z-index:10"></p>
 
 <script>
 function go(id){
-  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
+document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+window.scrollTo(0,0);
 }
 function unlock(){
-  const code=document.getElementById('code').value.trim();
-  if(code.toUpperCase()==='OURSECRET'){
-    document.getElementById('message').textContent='Access granted. Your surprise awaits! ✨';
-    setTimeout(()=>go('cake'),700);
-  }else{
-    document.getElementById('message').textContent='Not quite! Try the secret code again. ♡';
-  }
+if(document.getElementById('code').value.trim().toUpperCase()==='OURSECRET'){
+document.getElementById('message').textContent='Access granted ✨';
+setTimeout(()=>go('cake'),600);
+}else document.getElementById('message').textContent='Try the secret code again ♡';
 }
 function blow(){
-  document.getElementById('candles').textContent='🎂💨✨';
-  document.querySelector('#cake .card p').textContent='Wish made! May your dreams come true. ♡';
+document.querySelectorAll('.flame').forEach(f=>f.style.display='none');
+const layer=document.getElementById('sparkles');
+layer.innerHTML='';
+const symbols=['✨','💖','⭐','🌟','💫','✦'];
+for(let i=0;i<42;i++){
+let s=document.createElement('span');
+s.className='spark';
+s.textContent=symbols[i%symbols.length];
+s.style.setProperty('--x',(Math.random()*340-170)+'px');
+s.style.setProperty('--y',(Math.random()*-400-30)+'px');
+s.style.left=(10+Math.random()*80)+'%';
+s.style.top=(35+Math.random()*30)+'%';
+s.style.animationDelay=(Math.random()*.5)+'s';
+layer.appendChild(s);
 }
-function pop(button,word){
-  button.innerHTML='💥<span>'+word+'</span>';
-  document.getElementById('balloonMessage').textContent=word;
+}
+function pop(btn,word){
+btn.innerHTML='💥<span>'+word+'</span>';
+document.getElementById('balloonMessage').textContent=word;
 }
 const letters=[
-  ['Letter One 🌸','You deserve little moments of happiness, even on ordinary days.'],
-  ['Letter Two 🌙','May you always have dreams that excite you and people who cheer you on.'],
-  ['Letter Three ⭐','Never forget that your story is still unfolding, with so many adventures ahead.'],
-  ['Letter Four 💜','Here is a little reminder to take care of yourself and keep smiling.']
+['Letter One 🌸','Your personal message goes here.'],
+['Letter Two 🌙','Your personal message goes here.'],
+['Letter Three ⭐','Your personal message goes here.'],
+['Letter Four 💜','Your personal message goes here.']
 ];
 function readLetter(i){
-  document.getElementById('letterContent').classList.remove('hidden');
-  document.getElementById('letterTitle').textContent=letters[i][0];
-  document.getElementById('letterText').textContent=letters[i][1];
+document.getElementById('letterContent').classList.remove('hidden');
+document.getElementById('letterTitle').textContent=letters[i][0];
+document.getElementById('letterText').textContent=letters[i][1];
 }
-function closeLetter(){
-  document.getElementById('letterContent').classList.add('hidden');
-}
-function showFinal(){
-  document.getElementById('finalText').classList.remove('hidden');
-}
+function closeLetter(){document.getElementById('letterContent').classList.add('hidden')}
+function showFinal(){document.getElementById('finalText').classList.remove('hidden')}
 document.getElementById('musicFile').addEventListener('change',function(){
-  const file=this.files[0];
-  if(file){
-    const audio=document.getElementById('audio');
-    audio.src=URL.createObjectURL(file);
-    audio.play().catch(()=>{});
-    document.getElementById('musicStatus').textContent='Your music is ready ♫';
-  }
+if(this.files[0]){
+const a=document.getElementById('audio');
+a.src=URL.createObjectURL(this.files[0]);
+a.style.display='block';a.play().catch(()=>{});
+}
 });
 </script>
 </body>
