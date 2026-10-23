@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Letter For You</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 28px 14px;
+  background: #34251f;
+  color: #49362a;
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+
+.paper {
+  max-width: 430px;
+  margin: 15px auto;
+  padding: 30px 22px;
+  background: #f4e8d2;
+  border: 1px solid #c6ad87;
+  outline: 1px solid #c6ad87;
+  outline-offset: -7px;
+  box-shadow: 0 15px 45px #140c08aa;
+}
+
+.top {
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.flower {
+  font-size: 38px;
+  margin-top: 22px;
+}
+
+h1 {
+  font-size: 38px;
+  font-weight: normal;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.rule {
+  width: 75px;
+  border: 0;
+  border-top: 1px solid #9b7957;
+  margin: 24px auto;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.envelope {
+  margin: 25px auto 10px;
+  width: 180px;
+  height: 112px;
+  background: #d9b990;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border: 1px solid #a98762;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ead3ad;
+  clip-path: polygon(0 0, 100% 0, 50% 62%);
+}
+
+.seal {
+  z-index: 1;
+  align-self: end;
+  margin-bottom: 16px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #854b3d;
+  color: #f8e8cc;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+}
+
+button {
+  margin: 15px 0;
+  padding: 13px 22px;
+  background: #654735;
+  color: #fff0d7;
+  border: 1px solid #654735;
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:active { transform: scale(.97); }
+
+#letter {
+  display: none;
+  text-align: left;
+  padding: 20px 17px;
+  margin-top: 22px;
+  border: 1px solid #c8ae88;
+  background: #fff6e6;
+  animation: reveal 1s ease;
+}
+
+#letter h2 {
+  text-align: center;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.signature {
+  text-align: right;
+  font-style: italic;
+}
+
+footer {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+<main class="paper">
+
+  <div class="top">A little something for you</div>
+
+  <div class="flower">❦</div>
+
+  <h1>Happy Birthday</h1>
+
+  <p>
+    To someone who deserves<br>
+    a beautiful day and a lovely year.
+  </p>
+
+  <hr class="rule">
+
+  <p>There is a little letter waiting for you...</p>
+
+  <div class="envelope">
+    <div class="seal">♡</div>
+  </div>
+
+  <button onclick="openLetter()">
+    Open Your Letter
+  </button>
+
+  <section id="letter">
+    <h2>Dear You,</h2>
+
+    <p>
+      Some days deserve to be remembered,
+      and today is one of them.
+    </p>
+
+    <p>
+      May life bring you quiet happiness,
+      meaningful moments, and beautiful
+      little surprises when you least expect them.
+    </p>
+
+    <p>
+      I hope this new chapter of your life
+      is kinder, brighter, and full of things
+      that make you genuinely smile.
+    </p>
+
+    <p class="signature">
+      With warm wishes, ♡
+    </p>
+  </section>
+
+  <footer>MADE WITH LOVE & CARE</footer>
+
+</main>
+
+<script>
+function openLetter() {
+  const letter = document.getElementById("letter");
+  letter.style.display = "block";
+  letter.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
+}
+</script>
+</body>
+</html>
