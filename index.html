@@ -3,207 +3,191 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A Letter For You</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Birthday Made For You ♡</title>
 <style>
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  padding: 28px 14px;
-  background: #34251f;
-  color: #49362a;
-  font-family: Georgia, "Times New Roman", serif;
-  text-align: center;
-}
-
-.paper {
-  max-width: 430px;
-  margin: 15px auto;
-  padding: 30px 22px;
-  background: #f4e8d2;
-  border: 1px solid #c6ad87;
-  outline: 1px solid #c6ad87;
-  outline-offset: -7px;
-  box-shadow: 0 15px 45px #140c08aa;
-}
-
-.top {
-  font-size: 13px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
-
-.flower {
-  font-size: 38px;
-  margin-top: 22px;
-}
-
-h1 {
-  font-size: 38px;
-  font-weight: normal;
-  font-style: italic;
-  line-height: 1.2;
-}
-
-.rule {
-  width: 75px;
-  border: 0;
-  border-top: 1px solid #9b7957;
-  margin: 24px auto;
-}
-
-p {
-  font-size: 16px;
-  line-height: 1.9;
-}
-
-.envelope {
-  margin: 25px auto 10px;
-  width: 180px;
-  height: 112px;
-  background: #d9b990;
-  position: relative;
-  display: grid;
-  place-items: center;
-  border: 1px solid #a98762;
-}
-
-.envelope::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #ead3ad;
-  clip-path: polygon(0 0, 100% 0, 50% 62%);
-}
-
-.seal {
-  z-index: 1;
-  align-self: end;
-  margin-bottom: 16px;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: #854b3d;
-  color: #f8e8cc;
-  display: grid;
-  place-items: center;
-  font-size: 19px;
-}
-
-button {
-  margin: 15px 0;
-  padding: 13px 22px;
-  background: #654735;
-  color: #fff0d7;
-  border: 1px solid #654735;
-  font-family: inherit;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-button:active { transform: scale(.97); }
-
-#letter {
-  display: none;
-  text-align: left;
-  padding: 20px 17px;
-  margin-top: 22px;
-  border: 1px solid #c8ae88;
-  background: #fff6e6;
-  animation: reveal 1s ease;
-}
-
-#letter h2 {
-  text-align: center;
-  font-style: italic;
-  font-weight: normal;
-}
-
-.signature {
-  text-align: right;
-  font-style: italic;
-}
-
-footer {
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-top: 30px;
-}
-
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+*{box-sizing:border-box}
+body{margin:0;background:#090b1a;color:#fff;font-family:Georgia,serif;text-align:center}
+section{min-height:100vh;padding:55px 18px;display:none;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at top,#30234e,#090b1a 72%);animation:appear 1s ease}
+section.active{display:flex}
+@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+h1{font-size:clamp(29px,7vw,46px);color:#ffd6ed;margin:15px 0}
+p{line-height:1.8;max-width:520px;color:#e8dff8}
+.small{font-size:13px;color:#bcb1d5}
+button,input{font:inherit;border-radius:25px;padding:13px 19px;margin:8px;border:1px solid #d9a9ff}
+button{background:#e9b9e8;color:#23122f;cursor:pointer}
+button:hover{background:#fff}
+input{background:#171329;color:white;width:min(290px,90%)}
+.art{font-size:75px;margin:15px;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-13px)}}
+.card{width:min(420px,95%);padding:25px 18px;background:#ffffff0c;border:1px solid #c7a0e655;border-radius:22px;margin:12px auto;box-shadow:0 0 30px #a45cff13}
+.row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:500px}
+.balloon{font-size:50px;border:0;background:transparent;animation:float 2s infinite}
+.balloon span{display:block;font-size:12px;color:#f9d6f0}
+.letter{width:min(155px,43%);min-height:145px;background:#f5d8f0;color:#3d2249;border-radius:14px;padding:18px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;line-height:1.6}
+.letter b{font-size:18px}
+.hidden{display:none}
+#message{color:#ffe2f5;margin:12px}
+#musicStatus{font-size:12px;color:#d7c2ef}
+footer{color:#a99dbd;font-size:12px;margin-top:24px}
 </style>
 </head>
-
 <body>
-<main class="paper">
 
-  <div class="top">A little something for you</div>
+<section id="intro" class="active">
+  <div class="art">🌌 ✨</div>
+  <p class="small">A LITTLE WORLD, MADE JUST FOR YOU</p>
+  <h1>This website was made only for you.</h1>
+  <p>Some surprises are better when they are discovered slowly...</p>
+  <button onclick="go('secret')">Enter Your Secret World ♡</button>
+</section>
 
-  <div class="flower">❦</div>
+<section id="secret">
+  <div class="art">🔐 🌙</div>
+  <h1>Our Secret Code</h1>
+  <p>Enter the secret code we created together.</p>
+  <input id="code" type="password" placeholder="Enter your secret code">
+  <button onclick="unlock()">Unlock ♡</button>
+  <p id="message"></p>
+</section>
 
-  <h1>Happy Birthday</h1>
-
-  <p>
-    To someone who deserves<br>
-    a beautiful day and a lovely year.
-  </p>
-
-  <hr class="rule">
-
-  <p>There is a little letter waiting for you...</p>
-
-  <div class="envelope">
-    <div class="seal">♡</div>
+<section id="cake">
+  <div class="art">🎂</div>
+  <p class="small">TODAY IS ALL ABOUT YOU</p>
+  <h1>Happy Birthday!</h1>
+  <div class="card">
+    <div style="font-size:65px" id="candles">🎂🕯️🕯️🕯️</div>
+    <p>Make a wish and blow out the candles!</p>
+    <button onclick="blow()">Blow Out The Candles ✨</button>
   </div>
+  <h2 id="personName">Your Special Name</h2>
+  <p id="birthdayDate">Your Special Date</p>
+  <p>Today is the most special day for this person. ♡</p>
+  <button onclick="go('balloons')">Continue Your Surprise →</button>
+</section>
 
-  <button onclick="openLetter()">
-    Open Your Letter
-  </button>
+<section id="balloons">
+  <div class="art">🎈 ✨ 🎈</div>
+  <h1>A Little Reminder</h1>
+  <p>Tap each balloon and discover your message.</p>
+  <div class="row">
+    <button class="balloon" onclick="pop(this,'YOU')">🎈<span>Tap me</span></button>
+    <button class="balloon" onclick="pop(this,'ARE')">🎈<span>Tap me</span></button>
+    <button class="balloon" onclick="pop(this,'NICE')">🎈<span>Tap me</span></button>
+    <button class="balloon" onclick="pop(this,'PERSON')">🎈<span>Tap me</span></button>
+  </div>
+  <h2 id="balloonMessage"></h2>
+  <button onclick="go('letters')">Open Your Letters 💌</button>
+</section>
 
-  <section id="letter">
-    <h2>Dear You,</h2>
+<section id="letters">
+  <div class="art">💌 🌸</div>
+  <h1>Four Little Letters</h1>
+  <p>Each envelope holds a little message for you.</p>
+  <div class="row">
+    <button class="letter" onclick="readLetter(0)">🌸<b>Letter One</b><span>Open me</span></button>
+    <button class="letter" onclick="readLetter(1)">🌙<b>Letter Two</b><span>Open me</span></button>
+    <button class="letter" onclick="readLetter(2)">⭐<b>Letter Three</b><span>Open me</span></button>
+    <button class="letter" onclick="readLetter(3)">💜<b>Letter Four</b><span>Open me</span></button>
+  </div>
+  <div class="card hidden" id="letterContent">
+    <div class="art" style="font-size:45px">🌷</div>
+    <h2 id="letterTitle"></h2>
+    <p id="letterText"></p>
+    <button onclick="closeLetter()">Close Letter</button>
+  </div>
+  <p class="small">A little anime magic, just for you.</p>
+  <button onclick="go('final')">One Last Letter →</button>
+</section>
 
-    <p>
-      Some days deserve to be remembered,
-      and today is one of them.
-    </p>
+<section id="final">
+  <div class="art">🌌 💌 ✨</div>
+  <p class="small">SOMETHING I SAVED FOR LAST</p>
+  <h1>The Final Letter</h1>
+  <div class="card">
+    <div class="art">💌</div>
+    <p>A little more than a birthday wish. A little more than words.</p>
+    <button onclick="showFinal()">Open Your Final Letter ♡</button>
+    <div id="finalText" class="hidden">
+      <p>Happy Birthday to you. ♡</p>
+      <p>I hope this new chapter brings you beautiful memories, unexpected happiness, and countless reasons to smile.</p>
+      <p>May you always find something worth dreaming about and the courage to follow those dreams.</p>
+      <p>This little website is a small surprise, made especially for your special day.</p>
+      <p>Keep being yourself. Your story still has so many beautiful pages left to unfold. ✨</p>
+    </div>
+  </div>
+  <button onclick="go('bye')">Continue ♡</button>
+</section>
 
-    <p>
-      May life bring you quiet happiness,
-      meaningful moments, and beautiful
-      little surprises when you least expect them.
-    </p>
+<section id="bye">
+  <div class="art">🌠 🖤 🌠</div>
+  <h1>Okay, byee! ♡</h1>
+  <p>Until the next little adventure...</p>
+  <p>Don't forget to smile today.</p>
+  <div class="art">✨ 🌸 ✨</div>
+  <button onclick="go('intro')">Watch Again ↺</button>
+</section>
 
-    <p>
-      I hope this new chapter of your life
-      is kinder, brighter, and full of things
-      that make you genuinely smile.
-    </p>
+<section id="music">
+  <h1>Music</h1>
+  <input type="file" id="musicFile" accept="audio/*">
+  <audio id="audio" controls loop></audio>
+</section>
 
-    <p class="signature">
-      With warm wishes, ♡
-    </p>
-  </section>
-
-  <footer>MADE WITH LOVE & CARE</footer>
-
-</main>
+<div style="position:fixed;bottom:12px;right:12px;z-index:10">
+  <button onclick="document.getElementById('musicFile').click()">♫ Add Music</button>
+</div>
+<p id="musicStatus" style="position:fixed;bottom:0;left:8px;z-index:10"></p>
 
 <script>
-function openLetter() {
-  const letter = document.getElementById("letter");
-  letter.style.display = "block";
-  letter.scrollIntoView({
-    behavior: "smooth",
-    block: "nearest"
-  });
+function go(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
 }
+function unlock(){
+  const code=document.getElementById('code').value.trim();
+  if(code.toUpperCase()==='OURSECRET'){
+    document.getElementById('message').textContent='Access granted. Your surprise awaits! ✨';
+    setTimeout(()=>go('cake'),700);
+  }else{
+    document.getElementById('message').textContent='Not quite! Try the secret code again. ♡';
+  }
+}
+function blow(){
+  document.getElementById('candles').textContent='🎂💨✨';
+  document.querySelector('#cake .card p').textContent='Wish made! May your dreams come true. ♡';
+}
+function pop(button,word){
+  button.innerHTML='💥<span>'+word+'</span>';
+  document.getElementById('balloonMessage').textContent=word;
+}
+const letters=[
+  ['Letter One 🌸','You deserve little moments of happiness, even on ordinary days.'],
+  ['Letter Two 🌙','May you always have dreams that excite you and people who cheer you on.'],
+  ['Letter Three ⭐','Never forget that your story is still unfolding, with so many adventures ahead.'],
+  ['Letter Four 💜','Here is a little reminder to take care of yourself and keep smiling.']
+];
+function readLetter(i){
+  document.getElementById('letterContent').classList.remove('hidden');
+  document.getElementById('letterTitle').textContent=letters[i][0];
+  document.getElementById('letterText').textContent=letters[i][1];
+}
+function closeLetter(){
+  document.getElementById('letterContent').classList.add('hidden');
+}
+function showFinal(){
+  document.getElementById('finalText').classList.remove('hidden');
+}
+document.getElementById('musicFile').addEventListener('change',function(){
+  const file=this.files[0];
+  if(file){
+    const audio=document.getElementById('audio');
+    audio.src=URL.createObjectURL(file);
+    audio.play().catch(()=>{});
+    document.getElementById('musicStatus').textContent='Your music is ready ♫';
+  }
+});
 </script>
 </body>
 </html>
