@@ -1,229 +1,136 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Little Something for Fatin ♡</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Little Birthday Story ♡</title>
 <style>
-:root{--ink:#433642;--rose:#b56c8b;--pink:#f7e8ef;--cream:#fffaf5;--sage:#dce7dc;--line:#ead5df}
 *{box-sizing:border-box}
-body{margin:0;background:linear-gradient(135deg,#fffaf5,#f8eaf0 55%,#edf3ed);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
-button,input{font:inherit}
-button{border:0;border-radius:999px;padding:12px 20px;background:#a95e7e;color:white;cursor:pointer;box-shadow:0 5px 14px #8d456522;transition:transform .2s,background .2s}
-button:hover{transform:translateY(-2px);background:#8e4a68}
-button.secondary{background:#eee0e7;color:#6c4055}
-main{width:min(850px,92%);margin:0 auto;padding:22px 0 60px}
-.topline{text-align:center;color:#a46b85;letter-spacing:.18em;text-transform:uppercase;font:12px Arial,sans-serif}
-.hero,.panel{background:#fffdfbf0;border:1px solid var(--line);border-radius:26px;padding:clamp(22px,5vw,44px);box-shadow:0 18px 60px #7c50600d;margin:18px 0}
-.hero{text-align:center;min-height:65vh;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;position:relative}
-h1{font-size:clamp(2.2rem,7vw,4.6rem);line-height:1.05;margin:14px 0;color:#8d4d6a;font-weight:normal}
-h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:normal;color:#8d4d6a;margin:0 0 12px}
-h3{color:#8d4d6a;font-weight:normal;margin-bottom:8px}
-p{margin:10px 0 16px}
-.small{font:13px Arial,sans-serif;color:#927c88}
-.heart{font-size:30px;color:#c77d9b;animation:pulse 2s infinite}
-@keyframes pulse{50%{transform:scale(1.15)}}
-.scene-art{min-height:180px;border-radius:20px;margin:18px 0;background:linear-gradient(180deg,#f5eee8,#e8eee7);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;border:1px solid #eadde0}
-.scene-art .sun{position:absolute;width:90px;height:90px;border-radius:50%;background:#f6d8a5;top:18px;right:10%;opacity:.75}
-.scene-art .classroom{position:absolute;inset:30px 18px 0;background:repeating-linear-gradient(90deg,transparent 0 22%,#ffffff80 22% 23%,transparent 23% 45%),linear-gradient(#e4eadd,#d5dfd1);border-radius:12px 12px 0 0;opacity:.7}
-.scene-art .caption{position:relative;z-index:1;background:#fffaf0d9;border-radius:15px;padding:12px 16px;max-width:85%;font-size:14px}
-.dialogue{display:grid;gap:10px;margin:18px 0}
-.line{background:#f8eef2;border-left:3px solid #c58ba3;padding:12px 15px;border-radius:4px 14px 14px 4px}
-.line b{color:#92526d}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.hidden{display:none!important}
-input{width:100%;padding:13px 15px;border:1px solid #dfbdcd;border-radius:14px;background:#fff;color:#433642;margin:10px 0}
-.center{text-align:center}
-.letter{background:#fffdf6;border:1px solid #ead9c5;border-radius:16px;padding:22px;margin-top:16px;white-space:pre-line;box-shadow:inset 0 0 25px #e4d1b11c}
-.envelope{font-size:46px;display:block;margin:8px}
-footer{text-align:center;color:#a0788b;font-size:13px;margin-top:30px}
-.rain{background:linear-gradient(#dbe3eb,#c8d4df)!important}
-.final{background:#252630;color:#f8eaf0;text-align:center;border-radius:22px;padding:35px 22px;margin-top:22px}
-.final h2{color:#f0c6d8}
-.note{background:#fff3d9;padding:12px 15px;border-radius:12px;font:13px Arial,sans-serif;color:#6f5a42}
-@media(max-width:520px){.hero{min-height:58vh}.scene-art{min-height:155px}.actions button{width:100%}}
+body{margin:0;background:#10152e;color:#fff4ed;font-family:Georgia,serif;text-align:center}
+.page{display:none;min-height:100vh;padding:35px 20px 50px;align-items:center;justify-content:center;flex-direction:column;overflow:hidden}
+.page.active{display:flex}
+h1{font-size:clamp(30px,8vw,45px);font-weight:normal;color:#f8c8dc;margin:12px}
+h2{font-weight:normal;color:#f8c8dc}
+p{line-height:1.85;max-width:480px;font-size:16px}
+button{background:#f5c5d9;color:#29213b;border:0;border-radius:30px;padding:13px 23px;margin:9px;font-size:15px;cursor:pointer}
+button:active{transform:scale(.97)}
+input{padding:13px;border:1px solid #e9bdd2;border-radius:22px;background:#fff7f5;color:#29213b;text-align:center;font-size:17px;max-width:230px}
+.small{font-size:13px;color:#c7c4d9}
+.stars{position:fixed;inset:0;pointer-events:none;opacity:.6;background-image:radial-gradient(#fff 1px,transparent 1.5px),radial-gradient(#f8c8dc 1px,transparent 1.5px);background-size:53px 59px,83px 91px;background-position:0 0,23px 30px;z-index:0}
+.page>*{position:relative;z-index:1}
+.guide{width:125px;max-height:175px;object-fit:contain;margin:8px}
+.card{background:#fff4e8;color:#44344b;border-radius:5px;padding:24px 22px;max-width:430px;width:100%;box-shadow:4px 6px 0 #d5a9bd;transform:rotate(-.5deg)}
+.card p{font-size:15px}
+.tape{width:75px;height:19px;background:#f2b9d0;opacity:.8;transform:rotate(-5deg);margin-bottom:-12px;z-index:2!important}
+.cake{position:relative;width:230px;height:160px;margin:30px auto 20px}
+.cake .base{position:absolute;bottom:8px;left:15px;width:200px;height:70px;background:#f5bfd5;border-radius:8px 8px 17px 17px;border-bottom:10px solid #d68ba9}
+.cake .top{position:absolute;top:42px;left:15px;width:200px;height:35px;border-radius:50%;background:#fff0df;border:3px solid #d68ba9;z-index:2}
+.cake .icing{position:absolute;top:59px;left:25px;width:180px;height:20px;background:#fff0df;border-radius:0 0 18px 18px;z-index:3}
+.cake .name{position:absolute;top:82px;left:0;width:100%;color:#68425b;font-size:16px;z-index:4}
+.candle{position:absolute;top:8px;left:112px;width:8px;height:43px;background:repeating-linear-gradient(45deg,#fff 0 5px,#e88caf 5px 9px);z-index:4}
+.flame{position:absolute;top:-13px;left:-4px;width:16px;height:22px;background:#ffd36f;border-radius:50% 50% 45% 45%;box-shadow:0 0 20px #ffcf6b;animation:flicker .6s infinite alternate}
+@keyframes flicker{to{transform:scale(.8) rotate(5deg)}}
+.balloons{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:300px}
+.balloon{font-size:58px;background:none;padding:8px;margin:0;animation:float 2s infinite alternate}
+@keyframes float{to{transform:translateY(-8px)}}
+.balloon.popped{opacity:.35;transform:scale(.7)}
+a{color:#f8c8dc}
 </style>
 </head>
 <body>
-<main>
-<div class="topline">A tiny birthday story · made with love</div>
-<section class="hero" id="welcome">
-<div class="heart">♡</div>
-<p class="small">A LITTLE SOMETHING FOR</p>
-<h1>Fatin Almas</h1>
-<p>A small surprise, made just for you.</p>
-<p class="small">Take your time. This little story is yours.</p>
-<button onclick="show('corridor')">Begin the story ♡</button>
+<div class="stars"></div>
+
+<section class="page active" id="p0">
+<img class="guide" src="https://www.pngkey.com/png/detail/432-4329320_usagi-tsukino-sailor-moon-sailor-moon-usagi-png.png" alt="Usagi">
+<p class="small">A tiny story made just for you</p>
+<h1>Hey, Birthday Boy ♡</h1>
+<p>Hiiii! 🎀 I'm Usagi, your little guide! This little website was made specially for you. The creator tried her best, so please be nice to her coding skills. 😂</p>
+<button onclick="go(1)">Let's begin ✨</button>
 </section>
 
-<section class="panel hidden" id="corridor">
-<h2>01 · The School Corridor</h2>
-<div class="scene-art"><div class="sun"></div><div class="classroom"></div><div class="caption">A quiet school corridor in warm daylight. Fatin waits beside the classroom in his white shirt, black trousers and dark bag. A girl in a white hijab approaches him.</div></div>
-<div class="dialogue">
-<div class="line"><b>Girl:</b> Hey, I want to tell you something.</div>
-<div class="line"><b>Boy:</b> Tell me.</div>
-<div class="line"><b>Girl:</b> First, take out your phone.</div>
-<div class="line"><b>Boy:</b> Okay, I’ve got my phone. Now tell me, what is it?</div>
-<div class="line"><b>Girl:</b> I created a website just for you.</div>
-<div class="line"><b>Boy:</b> For me? You did?</div>
-<div class="line"><b>Girl:</b> Yes. I’m not very experienced with these things, but I tried my best. I put everything I could into making it. I don’t know how much you’ll like it, but I really wanted to do something special for you.</div>
+<section class="page" id="p1">
+<h1>A little secret…</h1>
+<p>Before we continue, there's a tiny secret code waiting for you.</p>
+<input id="code" placeholder="Enter secret code" inputmode="numeric">
+<p id="error" class="small"></p>
+<button onclick="checkCode()">Unlock ♡</button>
+</section>
+
+<section class="page" id="p2">
+<p class="small">A little wish, just for you</p>
+<h1>Make a Wish ✨</h1>
+<div class="cake">
+<div class="candle"><div class="flame" id="flame"></div></div>
+<div class="top"></div><div class="base"></div><div class="icing"></div>
+<div class="name">Fatin Almas</div>
 </div>
-<p>She takes out her own phone and sends him the link on Messenger.</p>
-<div class="line"><b>Message:</b> I made something special for you. Open this link when you're ready. ♡<br><span class="small">A Little Something for You ♡ · Made with love, just for you.</span></div>
-<div class="actions"><button onclick="show('code')">He opens the link ↗</button></div>
+<p id="wishText">Close your eyes for a second and make a wish.</p>
+<button id="wishBtn" onclick="wish()">Make a Wish 🕯️</button>
+<button id="cutBtn" style="display:none" onclick="cutCake()">Cut the Cake! 🎂</button>
+<div id="slice" style="display:none;font-size:25px">🍰</div>
 </section>
 
-<section class="panel hidden" id="code">
-<h2>02 · A Little Secret</h2>
-<div class="scene-art"><div class="caption">A soft paper-like screen with a tiny lock and a heart.</div></div>
-<p>“Remember the code we once created just for us? Give me that code.”</p>
-<div class="center"><span class="heart">♡</span><input id="secret" inputmode="numeric" maxlength="4" placeholder="Enter the secret code" aria-label="Secret code"><button onclick="unlock()">Unlock the surprise</button><p id="codeMsg" class="small"></p></div>
+<section class="page" id="p3">
+<h1>Pop a Balloon 🎈</h1>
+<p>Each balloon has a little message for you. Tap them all!</p>
+<div class="balloons">
+<button class="balloon" onclick="pop(this,0)">🎈</button>
+<button class="balloon" onclick="pop(this,1)">🎈</button>
+<button class="balloon" onclick="pop(this,2)">🎈</button>
+<button class="balloon" onclick="pop(this,3)">🎈</button>
+</div>
+<p id="balloonMsg">Choose any balloon ♡</p>
+<button id="letterBtn" style="display:none" onclick="go(4)">A few little letters 💌</button>
 </section>
 
-<section class="panel hidden" id="birthday">
-<h2>03 · Happy Birthday</h2>
-<div class="scene-art"><div class="sun"></div><div class="classroom"></div><div class="caption">In a sunlit classroom, they stand beside a pretty birthday cake with candles.</div></div>
-<div class="dialogue"><div class="line"><b>Girl:</b> Happy Birthday, Fatin… ♡</div><div class="line"><b>Girl:</b> Make a wish before we blow them out.</div><div class="line"><b>Boy:</b> Okay. Ready?</div></div>
-<div class="center"><div style="font-size:48px">🎂 🕯️ 🕯️ 🕯️</div><button id="candleBtn" onclick="blow()">Blow Out the Candles ♡</button><p id="candleMsg"></p></div>
-<div class="actions"><button onclick="show('cake')">Continue ♡</button></div>
+<section class="page" id="p4">
+<h1>Little Notes 💌</h1>
+<p class="small">Four little things I wanted you to read.</p>
+<div class="card"><div class="tape"></div><h2 id="letterTitle">The Little Things</h2><p id="letterText"></p></div>
+<p class="small" id="letterCount">Letter 1 of 4</p>
+<button id="nextLetter" onclick="nextL()">Next letter →</button>
+<button id="finalBtn" style="display:none" onclick="go(5)">One last letter ♡</button>
 </section>
 
-<section class="panel hidden" id="cake">
-<h2>04 · A Piece of Cake</h2>
-<div class="scene-art"><div class="sun"></div><div class="classroom"></div><div class="caption">She offers Fatin a small piece of cake. Later, they sit on two separate nearby benches and talk quietly.</div></div>
-<div class="dialogue"><div class="line"><b>Girl:</b> Here, this piece is for you.</div><div class="line"><b>Boy:</b> You made all of this just for me?</div><div class="line"><b>Girl:</b> Of course. It’s your special day.</div></div>
-<div class="actions"><button onclick="show('notebook')">The letters ♡</button></div>
+<section class="page" id="p5">
+<h1>Before You Go ♡</h1>
+<div class="card">
+<p>I know you feel that things ended because of me. Maybe I really did make mistakes that hurt you, and I'm sorry for that.</p>
+<p>I can't undo what happened, and I'm not writing this expecting anything to change.</p>
+<p>I just want you to know that, despite everything, I'm glad we knew each other. The little conversations, the silly jokes, the ordinary moments—those things meant something to me.</p>
+<p>Take care, Fatin. I'm sorry for the hurt I caused, and thank you for the good memories.</p>
+<p><b>Some people leave our lives, but the time we shared still mattered. ♡</b></p>
+</div>
+<button onclick="go(6)">One last thing ✨</button>
 </section>
 
-<section class="panel hidden" id="notebook">
-<h2>05 · The Notebook</h2>
-<div class="scene-art"><div class="sun"></div><div class="classroom"></div><div class="caption">She writes in a notebook, keeping the page hidden from the audience. Fatin watches quietly from another bench. She tears out four pages and places them into four separate envelopes, then sits beside him.</div></div>
-<p>No dialogue. Only soft instrumental music and the quiet sounds of the classroom.</p>
-<p>She gives him the envelopes one at a time. Tap each envelope to read its letter.</p>
-<div class="actions"><button onclick="show('letter1')">Open the first envelope ♡</button></div>
+<section class="page" id="p6">
+<img class="guide" src="https://www.pngkey.com/png/detail/432-4329320_usagi-tsukino-sailor-moon-sailor-moon-usagi-png.png" alt="Usagi">
+<h1>Happy Birthday, Fatin! ♡</h1>
+<p>I hope this new year of your life brings you good days, genuine smiles, and plenty of little reasons to be happy.</p>
+<p class="small">Made with care, just for you ✨</p>
+<button onclick="go(0)">Read it again ↺</button>
 </section>
 
-<section class="panel hidden" id="letter1">
-<h2>Envelope 01 · The Little Things</h2><div class="center"><span class="envelope">💌</span><button onclick="toggleLetter('text1',this)">Open the Letter ♡</button></div>
-<div class="letter hidden" id="text1">Sometimes, the smallest things become the most beautiful memories without us even realizing it.
-
-A little conversation, a familiar smile, or a moment that seems ordinary to everyone else can mean so much more to someone.
-
-I don't know if you notice these little things, but some moments stay in my mind longer than they probably should.
-
-Maybe that's the beauty of certain people. They don't have to do anything extraordinary to make an ordinary day feel different.
-
-And somehow, some days become worth remembering simply because a certain person was there.</div>
-<div class="actions"><button onclick="show('letter2')">Next envelope ♡</button></div>
-</section>
-<section class="panel hidden" id="letter2">
-<h2>Envelope 02 · Things Left Unsaid</h2><div class="center"><span class="envelope">💌</span><button onclick="toggleLetter('text2',this)">Open the Letter ♡</button></div>
-<div class="letter hidden" id="text2">Not every feeling finds its way into words, and not every thought needs to be spoken aloud.
-
-Sometimes, there are things we keep quietly to ourselves—not because they are unimportant, but because we don't know how to explain them.
-
-If you ever wonder why someone remembers the smallest details about you, perhaps those details were never really small to them.
-
-Some people leave little traces in our everyday lives without even knowing it.
-
-And sometimes, the things left unsaid are the ones that carry the most meaning.</div>
-<div class="actions"><button onclick="show('letter3')">Next envelope ♡</button></div>
-</section>
-<section class="panel hidden" id="letter3">
-<h2>Envelope 03 · A Day Worth Keeping</h2><div class="center"><span class="envelope">💌</span><button onclick="toggleLetter('text3',this)">Open the Letter ♡</button></div>
-<div class="letter hidden" id="text3">I wanted today to be a little different from all the other days.
-
-Not because everything had to be perfect, but because some days deserve to be remembered in their own special way.
-
-Maybe you'll forget the little details someday—the cake, the letters, the rain, or the silly things we said.
-
-But I hope that whenever this day crosses your mind, you'll remember that someone took the time to make it meaningful for you.
-
-And perhaps, years from now, even the smallest memory from today will bring a quiet smile to your face.
-
-That would be enough for me.</div>
-<div class="actions"><button onclick="show('letter4')">Next envelope ♡</button></div>
-</section>
-<section class="panel hidden" id="letter4">
-<h2>Envelope 04 · Before You Go</h2><div class="center"><span class="envelope">💌</span><button onclick="toggleLetter('text4',this)">Open the Letter ♡</button></div>
-<div class="letter hidden" id="text4">There is something I have wanted to say, but somehow, putting it into words has never been easy.
-
-I don't know what the future holds, or which memories will stay with us as time passes. Life has its own way of changing things, sometimes without warning.
-
-But I know that some moments are precious simply because they happened, regardless of what comes after them.
-
-So, if one day you happen to remember this little surprise, I hope you remember it with a smile.
-
-You don't have to find the perfect words to respond, and you don't have to promise anything.
-
-Just know that, for a little while, making you happy was something I truly wanted to do.
-
-And perhaps, that is all this moment ever needed to be.</div>
-<div class="actions"><button onclick="show('thanks')">Continue ♡</button></div>
-</section>
-
-<section class="panel hidden" id="thanks">
-<h2>06 · Thank You</h2>
-<div class="scene-art"><div class="sun"></div><div class="classroom"></div><div class="caption">He looks at her with a touched, grateful smile. She smiles shyly.</div></div>
-<div class="line"><b>Boy:</b> I honestly don't know what to say… Thank you for putting so much effort into making my birthday this special. I'll keep these letters close to my heart. You have no idea how much this means to me.</div>
-<div class="actions"><button onclick="show('umbrella')">Walk to the school gate ♡</button></div>
-</section>
-
-<section class="panel hidden" id="umbrella">
-<h2>07 · Under One Umbrella</h2>
-<div class="scene-art rain"><div class="caption">In gentle rain, Fatin holds a black umbrella over both of them as they walk side by side toward the school gate. She is a little shy. The school grounds and wet pavement are quiet.</div></div>
-<p class="small">Soft instrumental music, rain ambience, and a few quiet close-ups. No dialogue.</p>
-<div class="actions"><button onclick="show('gate')">At the school gate ♡</button></div>
-</section>
-
-<section class="panel hidden" id="gate">
-<h2>08 · One Last Letter</h2>
-<div class="scene-art rain"><div class="caption">At the gate, she gives him a separate, longer letter. He holds the umbrella over them.</div></div>
-<div class="dialogue"><div class="line"><b>Girl:</b> Don't open it yet. Read it after I leave, okay?</div><div class="line">She gives him a hug. After a little while, she steps back.</div><div class="line"><b>Girl:</b> Thank you for accepting all my gifts so beautifully. This special day wasn't just special for you… it was special for me, too.</div><div class="line"><b>Girl:</b> Take care.</div></div>
-<p>She walks away. Fatin watches until she is out of sight. Only then does he open the final letter.</p>
-<div class="actions"><button onclick="show('finalletter')">Read the final letter ♡</button></div>
-</section>
-
-<section class="panel hidden" id="finalletter">
-<h2>For Fatin Almas ♡</h2>
-<div class="letter">I don't know when you'll read this, but I hope you'll read it slowly.
-
-You know, some memories are strange. We don't always realize we're making them until they become something we wish we could visit one more time.
-
-Maybe someday, we won't talk as often as we do now. Maybe life will take us to places we never imagined, and we'll become different versions of the people we are today.
-
-But I hope, somewhere in your memories, there will always be a little space for these ordinary days. The silly conversations, the random smiles, the moments that meant nothing to anyone else but somehow meant something to me.
-
-I wonder if you'll ever remember the little things I remember. Probably not all of them, and that's okay. Some memories are special even when only one person carries them.
-
-I never needed every moment to be perfect. I just wanted a few moments that would still feel beautiful when I looked back at them.
-
-And if you ever find yourself thinking about today, I hope you remember how someone tried to make you smile, how carefully every little thing was put together, and how much thought went into something that might have looked simple from the outside.
-
-Maybe I don't always know how to express what certain moments mean to me. So I put some of those feelings into these little things instead.
-
-Thank you for being a part of memories I'll probably keep for a long time.
-
-And if life ever makes these days feel far away, I hope you look back without sadness. I hope you smile, even if it's just for a second.
-
-Because some moments don't need to last forever to mean something forever.
-
-Take care of yourself, okay? And please, don't forget the little things. Sometimes, they're the ones that matter the most. ♡</div>
-<div class="actions"><button onclick="show('ending')">Close the letter ♡</button></div>
-</section>
-
-<section class="panel hidden" id="ending">
-<div class="scene-art rain"><div class="caption">Fatin stands alone in the rain, looking up at the cloudy sky. He closes the umbrella and keeps reading the letter as the rain falls. The camera slowly pulls away.</div></div>
-<div class="final"><div class="heart">♡</div><h2>Some moments don't last forever.</h2><p>But sometimes, they stay with us forever.</p><p><b>Happy Birthday, Fatin Almas.</b></p><p class="small">Made with love, just for you.</p></div>
-<p class="center"><button onclick="location.reload()">Read the story again ↻</button></p>
-</section>
-<footer>Made with care ♡ · A Little Something for Fatin</footer>
-</main>
 <script>
-function show(id){document.querySelectorAll('main > section').forEach(s=>s.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});}
-function unlock(){const input=document.getElementById('secret');if(input.value==='1317'){show('birthday')}else{document.getElementById('codeMsg').textContent='Not quite… try to remember our little secret. ♡';input.value='';input.focus();}}
-function blow(){document.getElementById('candleMsg').textContent='The candles go out, and little confetti hearts fill the screen. Happy Birthday, Fatin! ♡';document.getElementById('candleBtn').textContent='Wish made ♡';document.getElementById('candleBtn').disabled=true;document.getElementById('candleBtn').style.opacity='.65';}
-function toggleLetter(id,btn){const el=document.getElementById(id);el.classList.toggle('hidden');btn.textContent=el.classList.contains('hidden')?'Open the Letter ♡':'Close the Letter ♡';}
+const titles=["The Little Things","Things Left Unsaid","A Day Worth Keeping","The Quiet Moments"];
+const letters=[
+"Funny how the smallest things remind me of you. Random jokes, old conversations, little moments. We weren't perfect, but some memories were genuinely good. And honestly, brain, nobody asked for a flashback. 😂 ♡",
+"Maybe I made mistakes. Maybe I hurt you more than I understood at the time. I'm sorry for the things I could've handled better. I can't change the past, but I can admit where I went wrong. A little late, I know. 😅",
+"Things didn't end the way I would've wanted, but I'm glad we had some good moments. The silly jokes, random talks, and laughs over absolutely nothing. Not every good memory needs a happy ending. ♡",
+"It's strange how someone can go from being part of your everyday life to being someone you barely talk to. Things change, people move on. I just hope life gives you plenty of reasons to smile. ♡"
+];
+let current=0,popped=0;
+function go(n){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));document.getElementById("p"+n).classList.add("active");window.scrollTo(0,0)}
+function checkCode(){if(document.getElementById("code").value.trim()==="1317"){go(2)}else{document.getElementById("error").textContent="Not quite! Try again ♡"}}
+function wish(){document.getElementById("flame").style.display="none";document.getElementById("wishText").textContent="Wish made! Keep it safe in your heart. ♡";document.getElementById("wishBtn").style.display="none";document.getElementById("cutBtn").style.display="inline-block"}
+function cutCake(){document.querySelector(".cake .base").style.transform="translateX(-18px) rotate(-4deg)";document.getElementById("slice").style.display="block";document.getElementById("cutBtn").textContent="Cake cut! ♡";document.getElementById("cutBtn").onclick=()=>go(3)}
+const msgs=["You are a nice person. 💗","You're funnier than you think! 😂","You deserve so many good things. ✨","Never forget how special you are. 💗"];
+function pop(el,i){if(el.classList.contains("popped"))return;el.classList.add("popped");el.textContent="✨";document.getElementById("balloonMsg").textContent=msgs[i];popped++;if(popped===4)document.getElementById("letterBtn").style.display="inline-block"}
+function showLetter(){document.getElementById("letterTitle").textContent=titles[current];document.getElementById("letterText").textContent=letters[current];document.getElementById("letterCount").textContent="Letter "+(current+1)+" of 4";document.getElementById("nextLetter").style.display=current===3?"none":"inline-block";document.getElementById("finalBtn").style.display=current===3?"inline-block":"none"}
+function nextL(){if(current<3)current++;showLetter()}
+document.getElementById("letterBtn").addEventListener("click",()=>{current=0;showLetter()});
 </script>
 </body>
 </html>
