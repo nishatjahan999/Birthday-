@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Something for Fatin ♡</title>
+<style>
+:root{--ink:#433642;--rose:#b56c8b;--pink:#f7e8ef;--cream:#fffaf5;--sage:#dce7dc;--line:#ead5df}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(135deg,#fffaf5,#f8eaf0 55%,#edf3ed);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+button,input{font:inherit}
+button{border:0;border-radius:999px;padding:12px 20px;background:#a95e7e;color:white;cursor:pointer;box-shadow:0 5px 14px #8d456522;transition:transform .2s,background .2s}
+button:hover{transform:translateY(-2px);background:#8e4a68}
+button.secondary{background:#eee0e7;color:#6c4055}
+main{width:min(850px,92%);margin:0 auto;padding:22px 0 60px}
+.topline{text-align:center;color:#a46b85;letter-spacing:.18em;text-transform:uppercase;font:12px Arial,sans-serif}
+.hero,.panel{background:#fffdfbf0;border:1px solid var(--line);border-radius:26px;padding:clamp(22px,5vw,44px);box-shadow:0 18px 60px #7c50600d;margin:18px 0}
+.hero{text-align:center;min-height:65vh;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;position:relative}
+h1{font-size:clamp(2.2rem,7vw,4.6rem);line-height:1.05;margin:14px 0;color:#8d4d6a;font-weight:normal}
+h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:normal;color:#8d4d6a;margin:0 0 12px}
+h3{color:#8d4d6a;font-weight:normal;margin-bottom:8px}
+p{margin:10px 0 16px}
+.small{font:13px Arial,sans-serif;color:#927c88}
+.heart{font-size:30px;color:#c77d9b;animation:pulse 2s infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+.scene-art{min-height:180px;border-radius:20px;margin:18px 0;background:linear-gradient(180deg,#f5eee8,#e8eee7);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;border:1px solid #eadde0}
+.scene-art .sun{position:absolute;width:90px;height:90px;border-radius:50%;background:#f6d8a5;top:18px;right:10%;opacity:.75}
+.scene-art .classroom{position:absolute;inset:30px 18px 0;background:repeating-linear-gradient(90deg,transparent 0 22%,#ffffff80 22% 23%,transparent 23% 45%),linear-gradient(#e4eadd,#d5dfd1);border-radius:12px 12px 0 0;opacity:.7}
+.scene-art .caption{position:relative;z-index:1;background:#fffaf0d9;border-radius:15px;padding:12px 16px;max-width:85%;font-size:14px}
+.dialogue{display:grid;gap:10px;margin:18px 0}
+.line{background:#f8eef2;border-left:3px solid #c58ba3;padding:12px 15px;border-radius:4px 14px 14px 4px}
+.line b{color:#92526d}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.hidden{display:none!important}
+input{width:100%;padding:13px 15px;border:1px solid #dfbdcd;border-radius:14px;background:#fff;color:#433642;margin:10px 0}
+.center{text-align:center}
+.letter{background:#fffdf6;border:1px solid #ead9c5;border-radius:16px;padding:22px;margin-top:16px;white-space:pre-line;box-shadow:inset 0 0 25px #e4d1b11c}
+.envelope{font-size:46px;display:block;margin:8px}
+footer{text-align:center;color:#a0788b;font-size:13px;margin-top:30px}
+.rain{background:linear-gradient(#dbe3eb,#c8d4df)!important}
+.final{background:#252630;color:#f8eaf0;text-align:center;border-radius:22px;padding:35px 22px;margin-top:22px}
+.final h2{color:#f0c6d8}
+.note{background:#fff3d9;padding:12px 15px;border-radius:12px;font:13px Arial,sans-serif;color:#6f5a42}
+@media(max-width:520px){.hero{min-height:58vh}.scene-art{min-height:155px}.actions button{width:100%}}
+
+/* Gentle motion upgrade */
+html{scroll-behavior:smooth}
+.panel:not(.hidden){animation:panelEnter .75s cubic-bezier(.2,.75,.25,1) both}
+@keyframes panelEnter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{animation:titleFloat 4s ease-in-out infinite}
+@keyframes titleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.heart{display:inline-block;animation:pulse 2s infinite,heartGlow 3s ease-in-out infinite}
+@keyframes heartGlow{0%,100%{text-shadow:0 0 0 #f3a9c7}50%{text-shadow:0 0 14px #f3a9c7}}
+.scene-art .sun{animation:sunDrift 8s ease-in-out infinite alternate}
+@keyframes sunDrift{from{transform:translate(0,0)}to{transform:translate(-12px,8px)}}
+.scene-art .classroom{animation:roomGlow 5s ease-in-out infinite alternate}
+@keyframes roomGlow{from{filter:brightness(1)}to{filter:brightness(1.08)}}
+.line{animation:lineIn .55s ease both}
+.dialogue .line:nth-child(2){animation-delay:.08s}.dialogue .line:nth-child(3){animation-delay:.16s}.dialogue .line:nth-child(4){animation-delay:.24s}.dialogue .line:nth-child(5){animation-delay:.32s}.dialogue .line:nth-child(6){animation-delay:.40s}.dialogue .line:nth-child(7){animation-delay:.48s}
+@keyframes lineIn{from{opacity:0;transform:translateX(-9px)}to{opacity:1;transform:translateX(0)}}
+.envelope{animation:envelopeFloat 2.6s ease-in-out infinite}
+@keyframes envelopeFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}
+.rain{position:relative;isolation:isolate;overflow:hidden}
+.rain:before{content:"";position:absolute;inset:-30% 0;z-index:0;pointer-events:none;background-image:repeating-linear-gradient(105deg,transparent 0 18px,#ffffff80 19px 20px,transparent 21px 39px);background-size:70px 130px;animation:rainFall .7s linear infinite;opacity:.5}
+.rain .caption{z-index:1}
+@keyframes rainFall{from{transform:translateY(-30px)}to{transform:translateY(30px)}}
+.letter:not(.hidden){animation:letterReveal .7s ease both}
+@keyframes letterReveal{from{opacity:0;transform:translateY(12px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+button{transition:transform .22s ease,filter .22s ease,box-shadow .22s ease}
+button:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 9px 22px #8d456533}
+button:active{transform:scale(.98)}
+#confettiLayer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:999}
+.confetti-heart{position:absolute;top:-30px;font-size:20px;animation:confettiDrop 2.8s ease-in forwards;filter:drop-shadow(0 2px 2px #8d456522)}
+@keyframes confettiDrop{to{transform:translateY(110vh) rotate(540deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* Consistent illustrated characters added to every story scene */
+.scene-art{min-height:245px;align-items:flex-end;padding:18px 10px 0}
+.scene-art .caption{align-self:flex-start;margin:10px auto 0;max-width:94%;font-size:12px}
+.scene-art .duo{position:absolute;inset:52px 8% 0;display:flex;align-items:flex-end;justify-content:center;gap:clamp(8px,5vw,34px);pointer-events:none;z-index:2}
+.scene-art .person{position:relative;display:block;flex:0 0 auto;transform-origin:bottom center;filter:drop-shadow(0 5px 2px #55404a18)}
+.scene-art .person.boy{width:88px;height:170px;animation:boyIdle 3.5s ease-in-out infinite}
+.scene-art .person.girl{width:74px;height:112px;animation:girlIdle 3.2s ease-in-out infinite}
+.scene-art .person svg{width:100%;height:100%;overflow:visible}
+.scene-art .person.boy.walk{animation:boyWalk .8s ease-in-out infinite alternate}
+.scene-art .person.girl.walk{animation:girlWalk .8s ease-in-out infinite alternate}
+@keyframes boyIdle{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes girlIdle{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes boyWalk{from{transform:translateY(0) rotate(-2deg)}to{transform:translateY(-3px) rotate(2deg)}}
+@keyframes girlWalk{from{transform:translateY(-1px) rotate(2deg)}to{transform:translateY(0) rotate(-2deg)}}
+.scene-art.rain .duo:after{content:"☂";position:absolute;top:-32px;left:50%;transform:translateX(-50%);font-size:56px;color:#242936;text-shadow:0 2px 0 #fff;z-index:3}
+.scene-art.rain .person{filter:drop-shadow(0 5px 2px #2b344322)}
+@media(max-width:520px){.scene-art{min-height:220px}.scene-art .duo{inset:55px 3% 0;gap:7px}.scene-art .person.boy{width:72px;height:145px}.scene-art .person.girl{width:61px;height:98px}.scene-art .caption{font-size:11px;padding:8px 10px}}
+
+</style>
+</head>
+<body>
+<div id="confettiLayer" aria-hidden="true"></div>
+<main>
+<div class="topline">A tiny birthday story · made with love</div>
+<section class="hero" id="welcome">
+<div class="heart">♡</div>
+<p class="small">A LITTLE SOMETHING FOR</p>
+<h1>Fatin Almas</h1>
+<p>A small surprise, made just for you.</p>
+<p class="small">Take your time. This little story is yours.</p>
+<button onclick="show('corridor')">Begin the story ♡</button>
+</section>
+
+<section class="panel hidden" id="corridor">
+<h2>01 · The School Corridor</h2>
+<div class="scene-art"><div class="sun"></div><div class="classroom"></div><div class="caption">A quiet school corridor in warm daylight. Fatin waits beside the classroom in his white shirt, black trousers and dark bag. A girl in a white hijab approaches him.</div></div>
+<div class="dialogue">
+<div class="line"><b>Girl:</b> Hey, I want to tell you something.</div>
+<div class="line"><b>Boy:</b> Tell me.</div>
+<div class="line"><b>Girl:</b> First, take out your phone.</div>
+<div class="line"><b>Boy:</b> Okay, I’ve got my phone. Now tell me, what is it?</div>
+<div class="line"><b>Girl:</b> I created a website just for you.</div>
+<div class="line"><b>Boy:</b> For me? You did?</div>
+<div class="line"><b>Girl:</b> Yes. I’m not very experienced with these things, but I tried my best. I put everything I could into making it. I don’t know how much you’ll like it, but I really wanted to do something special for you.</div>
+</div>
+<p>She takes out her own phone and sends him the link on Messenger.</p>
+<div class="line"><b>Message:</b> I made something special for you. Open this link when you're ready. ♡<br><span class="small">A Little Something for You ♡ · Made with love, just for you.</span></div>
+<div class="actions"><button onclick="show('code')">He opens the link ↗</button></div>
+</section>
+
+<section class="panel hidden" id="code">
+<h2>02 · A Little Secret</h2>
+<div class="scene-art"><div class="caption">A soft paper-like screen with a tiny lock and a heart.</div></div>
+<p>“Remember the code we once created just for us? Give me that code.”</p>
+<div class="center"><span class="heart">♡</span><input id="secret" inputmode="numeric" maxlength="4" placeholder="Enter the secret code" aria-label="Secret code"><button onclick="unlock()">Unlock the surprise</button><p id="codeMsg" class="small"></p></div>
+</section>
+
+<section class="panel hidden" id="birthday">
+<h2>03 · Happy Birthday</h2>
+<div class="scene-art"><div class="sun"></div><div class="classroom"></div><div class="caption">In a sunlit classroom, they stand beside a pretty birthday cake with candles.</div></div>
+<div class="dialogue"><div class="line"><b>Girl:</b> Happy Birthday, Fatin… ♡</div><div class="line"><b>Girl:</b> Make a wish before we blow them out.</div><div class="line"><b>Boy:</b> Okay. Ready?</div></div>
+<div class="center"><div style="font-size:48px">🎂 🕯️ 🕯️ 🕯️</div><button id="candleBtn" onclick="blow()">Blow Out the Candles ♡</button><p id="candleMsg"></p></div>
+<div class="actions"><button onclick="show('cake')">Continue ♡</button></div>
+</section>
+
+<section class="panel hidden" id="cake">
+<h2>04 · A Piece of Cake</h2>
+<div class="scene-art"><div class="sun"></div><div class="classroom"></div><div class="caption">She offers Fatin a small piece of cake. Later, they sit on two separate nearby benches and talk quietly.</div></div>
+<div class="dialogue"><div class="line"><b>Girl:</b> Here, this piece is for you.</div><div class="line"><b>Boy:</b> You made all of this just for me?</div><div class="line"><b>Girl:</b> Of course. It’s your special day.</div></div>
+<div class="actions"><button onclick="show('notebook')">The letters ♡</button></div>
+</section>
+
+<section class="panel hidden" id="notebook">
+<h2>05 · The Notebook</h2>
+<div class="scene-art"><div class="sun"></div><div class="classroom"></div><div class="caption">She writes in a notebook, keeping the page hidden from the audience. Fatin watches quietly from another bench. She tears out four pages and places them into four separate envelopes, then sits beside him.</div></div>
+<p>No dialogue. Only soft instrumental music and the quiet sounds of the classroom.</p>
+<p>She gives him the envelopes one at a time. Tap each envelope to read its letter.</p>
+<div class="actions"><button onclick="show('letter1')">Open the first envelope ♡</button></div>
+</section>
+
+<section class="panel hidden" id="letter1">
+<h2>Envelope 01 · The Little Things</h2><div class="center"><span class="envelope">💌</span><button onclick="toggleLetter('text1',this)">Open the Letter ♡</button></div>
+<div class="letter hidden" id="text1">Sometimes, the smallest things become the most beautiful memories without us even realizing it.
+
+A little conversation, a familiar smile, or a moment that seems ordinary to everyone else can mean so much more to someone.
+
+I don't know if you notice these little things, but some moments stay in my mind longer than they probably should.
+
+Maybe that's the beauty of certain people. They don't have to do anything extraordinary to make an ordinary day feel different.
+
+And somehow, some days become worth remembering simply because a certain person was there.</div>
+<div class="actions"><button onclick="show('letter2')">Next envelope ♡</button></div>
+</section>
+<section class="panel hidden" id="letter2">
+<h2>Envelope 02 · Things Left Unsaid</h2><div class="center"><span class="envelope">💌</span><button onclick="toggleLetter('text2',this)">Open the Letter ♡</button></div>
+<div class="letter hidden" id="text2">Not every feeling finds its way into words, and not every thought needs to be spoken aloud.
+
+Sometimes, there are things we keep quietly to ourselves—not because they are unimportant, but because we don't know how to explain them.
+
+If you ever wonder why someone remembers the smallest details about you, perhaps those details were never really small to them.
+
+Some people leave little traces in our everyday lives without even knowing it.
+
+And sometimes, the things left unsaid are the ones that carry the most meaning.</div>
+<div class="actions"><button onclick="show('letter3')">Next envelope ♡</button></div>
+</section>
+<section class="panel hidden" id="letter3">
+<h2>Envelope 03 · A Day Worth Keeping</h2><div class="center"><span class="envelope">💌</span><button onclick="toggleLetter('text3',this)">Open the Letter ♡</button></div>
+<div class="letter hidden" id="text3">I wanted today to be a little different from all the other days.
+
+Not because everything had to be perfect, but because some days deserve to be remembered in their own special way.
+
+Maybe you'll forget the little details someday—the cake, the letters, the rain, or the silly things we said.
+
+But I hope that whenever this day crosses your mind, you'll remember that someone took the time to make it meaningful for you.
+
+And perhaps, years from now, even the smallest memory from today will bring a quiet smile to your face.
+
+That would be enough for me.</div>
+<div class="actions"><button onclick="show('letter4')">Next envelope ♡</button></div>
+</section>
+<section class="panel hidden" id="letter4">
+<h2>Envelope 04 · Before You Go</h2><div class="center"><span class="envelope">💌</span><button onclick="toggleLetter('text4',this)">Open the Letter ♡</button></div>
+<div class="letter hidden" id="text4">There is something I have wanted to say, but somehow, putting it into words has never been easy.
+
+I don't know what the future holds, or which memories will stay with us as time passes. Life has its own way of changing things, sometimes without warning.
+
+But I know that some moments are precious simply because they happened, regardless of what comes after them.
+
+So, if one day you happen to remember this little surprise, I hope you remember it with a smile.
+
+You don't have to find the perfect words to respond, and you don't have to promise anything.
+
+Just know that, for a little while, making you happy was something I truly wanted to do.
+
+And perhaps, that is all this moment ever needed to be.</div>
+<div class="actions"><button onclick="show('thanks')">Continue ♡</button></div>
+</section>
+
+<section class="panel hidden" id="thanks">
+<h2>06 · Thank You</h2>
+<div class="scene-art"><div class="sun"></div><div class="classroom"></div><div class="caption">He looks at her with a touched, grateful smile. She smiles shyly.</div></div>
+<div class="line"><b>Boy:</b> I honestly don't know what to say… Thank you for putting so much effort into making my birthday this special. I'll keep these letters close to my heart. You have no idea how much this means to me.</div>
+<div class="actions"><button onclick="show('umbrella')">Walk to the school gate ♡</button></div>
+</section>
+
+<section class="panel hidden" id="umbrella">
+<h2>07 · Under One Umbrella</h2>
+<div class="scene-art rain"><div class="caption">In gentle rain, Fatin holds a black umbrella over both of them as they walk side by side toward the school gate. She is a little shy. The school grounds and wet pavement are quiet.</div></div>
+<p class="small">Soft instrumental music, rain ambience, and a few quiet close-ups. No dialogue.</p>
+<div class="actions"><button onclick="show('gate')">At the school gate ♡</button></div>
+</section>
+
+<section class="panel hidden" id="gate">
+<h2>08 · One Last Letter</h2>
+<div class="scene-art rain"><div class="caption">At the gate, she gives him a separate, longer letter. He holds the umbrella over them.</div></div>
+<div class="dialogue"><div class="line"><b>Girl:</b> Don't open it yet. Read it after I leave, okay?</div><div class="line">She gives him a hug. After a little while, she steps back.</div><div class="line"><b>Girl:</b> Thank you for accepting all my gifts so beautifully. This special day wasn't just special for you… it was special for me, too.</div><div class="line"><b>Girl:</b> Take care.</div></div>
+<p>She walks away. Fatin watches until she is out of sight. Only then does he open the final letter.</p>
+<div class="actions"><button onclick="show('finalletter')">Read the final letter ♡</button></div>
+</section>
+
+<section class="panel hidden" id="finalletter">
+<h2>For Fatin Almas ♡</h2>
+<div class="letter">I don't know when you'll read this, but I hope you'll read it slowly.
+
+You know, some memories are strange. We don't always realize we're making them until they become something we wish we could visit one more time.
+
+Maybe someday, we won't talk as often as we do now. Maybe life will take us to places we never imagined, and we'll become different versions of the people we are today.
+
+But I hope, somewhere in your memories, there will always be a little space for these ordinary days. The silly conversations, the random smiles, the moments that meant nothing to anyone else but somehow meant something to me.
+
+I wonder if you'll ever remember the little things I remember. Probably not all of them, and that's okay. Some memories are special even when only one person carries them.
+
+I never needed every moment to be perfect. I just wanted a few moments that would still feel beautiful when I looked back at them.
+
+And if you ever find yourself thinking about today, I hope you remember how someone tried to make you smile, how carefully every little thing was put together, and how much thought went into something that might have looked simple from the outside.
+
+Maybe I don't always know how to express what certain moments mean to me. So I put some of those feelings into these little things instead.
+
+Thank you for being a part of memories I'll probably keep for a long time.
+
+And if life ever makes these days feel far away, I hope you look back without sadness. I hope you smile, even if it's just for a second.
+
+Because some moments don't need to last forever to mean something forever.
+
+Take care of yourself, okay? And please, don't forget the little things. Sometimes, they're the ones that matter the most. ♡</div>
+<div class="actions"><button onclick="show('ending')">Close the letter ♡</button></div>
+</section>
+
+<section class="panel hidden" id="ending">
+<div class="scene-art rain"><div class="caption">Fatin stands alone in the rain, looking up at the cloudy sky. He closes the umbrella and keeps reading the letter as the rain falls. The camera slowly pulls away.</div></div>
+<div class="final"><div class="heart">♡</div><h2>Some moments don't last forever.</h2><p>But sometimes, they stay with us forever.</p><p><b>Happy Birthday, Fatin Almas.</b></p><p class="small">Made with love, just for you.</p></div>
+<p class="center"><button onclick="location.reload()">Read the story again ↻</button></p>
+</section>
+<footer>Made with care ♡ · A Little Something for Fatin</footer>
+</main>
+<script>
+function show(id){document.querySelectorAll('main > section').forEach(s=>s.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});}
+function unlock(){const input=document.getElementById('secret');if(input.value==='1317'){show('birthday')}else{document.getElementById('codeMsg').textContent='Not quite… try to remember our little secret. ♡';input.value='';input.focus();}}
+function blow(){document.getElementById('candleMsg').textContent='The candles go out, and little confetti hearts fill the screen. Happy Birthday, Fatin! ♡';document.getElementById('candleBtn').textContent='Wish made ♡';document.getElementById('candleBtn').disabled=true;document.getElementById('candleBtn').style.opacity='.65';launchConfetti();} 
+function launchConfetti(){const layer=document.getElementById('confettiLayer');const symbols=['♡','♥','✦','✧','💕'];for(let i=0;i<34;i++){const bit=document.createElement('span');bit.className='confetti-heart';bit.textContent=symbols[Math.floor(Math.random()*symbols.length)];bit.style.left=Math.random()*100+'%';bit.style.animationDelay=(Math.random()*.9)+'s';bit.style.fontSize=(14+Math.random()*18)+'px';layer.appendChild(bit);setTimeout(()=>bit.remove(),4000);}}
+function toggleLetter(id,btn){const el=document.getElementById(id);el.classList.toggle('hidden');btn.textContent=el.classList.contains('hidden')?'Open the Letter ♡':'Close the Letter ♡';}
+
+const boySVG = `<svg viewBox="0 0 100 190" role="img" aria-label="Tall anime-style boy in white shirt and black trousers">
+<ellipse cx="50" cy="184" rx="29" ry="4" fill="#74636a" opacity=".18"/>
+<path d="M34 120 L31 168 L26 181 Q35 187 48 182 L53 137 L57 181 Q70 187 79 181 L70 120Z" fill="#20232b"/>
+<path d="M26 178 Q37 175 49 180 L49 187 L22 187 Q19 183 26 178M57 180 Q68 175 80 179 L86 186 L57 187Z" fill="#171920"/>
+<path d="M28 61 Q18 66 19 89 L23 126 Q50 136 77 126 L81 88 Q80 66 69 61Z" fill="#fffdfb" stroke="#ded9d8" stroke-width="1.5"/>
+<path d="M39 61 L50 76 L61 61 L57 90 L50 99 L43 90Z" fill="#f1eceb"/>
+<path d="M28 68 Q18 79 24 101 L31 103 L35 78M71 68 Q81 78 76 101 L69 103 L65 78" fill="#fffdfb" stroke="#ded9d8" stroke-width="1.5"/>
+<path d="M30 29 Q29 7 51 8 Q75 8 72 33 L68 50 Q63 62 50 63 Q36 60 31 48Z" fill="#d9a27f"/>
+<path d="M29 35 Q20 17 37 8 Q50 -1 66 8 Q82 17 72 39 L68 25 Q59 29 48 22 Q40 32 29 35Z" fill="#24232a"/>
+<path d="M31 24 Q43 15 47 11 Q47 23 61 22 L70 30 L72 20 Q72 8 59 5 Q42 0 31 12Z" fill="#302d35"/>
+<path d="M38 37 Q42 34 46 37M55 37 Q59 34 63 37" fill="none" stroke="#352b2b" stroke-width="2" stroke-linecap="round"/>
+<path d="M44 47 Q50 51 56 47" fill="none" stroke="#8d4e50" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M21 76 Q11 78 14 94 L21 112 Q25 117 30 112 L26 92Z" fill="#d9a27f"/>
+<path d="M78 76 Q88 78 85 94 L79 111 Q75 116 71 111 L75 92Z" fill="#d9a27f"/>
+<path d="M19 64 Q9 73 14 112 L24 113 L29 76Z" fill="#283a4a"/>
+<path d="M15 74 Q18 69 22 73 L31 112 L23 115Z" fill="#394d60"/>
+</svg>`;
+const girlSVG = `<svg viewBox="0 0 82 125" role="img" aria-label="Short anime-style girl in white hijab and white salwar kameez with blue-grey bag">
+<ellipse cx="41" cy="120" rx="25" ry="3.5" fill="#74636a" opacity=".17"/>
+<path d="M31 83 L29 111 L23 119 L37 119 L41 94 L45 119 L60 119 L52 83Z" fill="#fffdfb" stroke="#e5dddd" stroke-width="1.2"/>
+<path d="M23 118 L38 118 L38 123 L20 123 Q18 120 23 118M46 118 L61 118 L64 123 L45 123Z" fill="#fff"/>
+<path d="M24 49 Q16 55 16 74 L21 91 Q41 99 62 91 L66 72 Q65 54 57 49Z" fill="#fffdfb" stroke="#e6dddd" stroke-width="1.3"/>
+<path d="M26 54 L18 70 L22 91 L29 92 L32 62M56 54 L64 70 L60 91 L53 92 L50 62" fill="#fffdfb" stroke="#e6dddd" stroke-width="1.3"/>
+<path d="M24 24 Q23 7 41 7 Q59 7 58 25 L54 43 Q49 53 41 53 Q31 51 27 41Z" fill="#d9a27f"/>
+<path d="M20 25 Q17 7 34 3 Q49 -2 59 11 Q65 22 58 39 L54 48 Q50 38 51 27 Q40 30 30 23 L27 42 Q20 35 20 25Z" fill="#fff" stroke="#e2dce0" stroke-width="1.4"/>
+<path d="M31 29 Q35 26 38 29M44 29 Q48 26 51 29" fill="none" stroke="#3a3033" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M36 37 Q41 40 46 37" fill="none" stroke="#b77578" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M58 56 Q70 57 68 76 L64 91 L57 89 L60 71Z" fill="#d9a27f"/>
+<path d="M58 53 Q68 53 72 65 L69 91 L58 89 L57 66Z" fill="#91a8b5" stroke="#708b9c" stroke-width="1.5"/>
+<path d="M59 55 Q65 52 70 59" fill="none" stroke="#d5e1e4" stroke-width="2"/>
+</svg>`;
+function addIllustratedCharacters(){
+  document.querySelectorAll('.scene-art').forEach((scene)=>{
+    if(scene.querySelector('.duo')) return;
+    const duo=document.createElement('div');
+    duo.className='duo';
+    duo.innerHTML=`<div class="person girl">${girlSVG}</div><div class="person boy">${boySVG}</div>`;
+    const section=scene.closest('.panel');
+    if(section && ['umbrella','gate','finalletter'].includes(section.id)){
+      duo.querySelectorAll('.person').forEach(p=>p.classList.add('walk'));
+    }
+    scene.appendChild(duo);
+  });
+}
+document.addEventListener('DOMContentLoaded', addIllustratedCharacters);
+
+</script>
+</body>
+</html>
